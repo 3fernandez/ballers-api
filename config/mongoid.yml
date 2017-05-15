@@ -1,0 +1,25 @@
+default: &default
+  database: <%= "ballers_#{Rails.env}" %>
+  hosts:
+    - <%= ENV["MONGODB_HOST"] %>
+
+development:
+  clients:
+    default:
+      <<: *default
+
+test:
+  clients:
+    default:
+      <<: *default
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 1
+
+production:
+  clients:
+    default:
+      uri: <%= ENV["MONGODB_URI"] %>
+      options:
+        connect_timeout: 15

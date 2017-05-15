@@ -1,0 +1,4 @@
+export PORT='3000'
+export COMPOSE_PROJECT_NAME='ballers-api'
+PATH=$PATH:./bin
+. .env

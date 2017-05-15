@@ -1,0 +1,41 @@
+version: "2"
+services:
+  app:
+    build:
+      args:
+        - PORT=3000
+      context: .
+    command: ./scripts/run
+    environment:
+      - FACEBOOK_APP_ID
+      - FACEBOOK_SECRET
+      - GOOGLE_CLIENT_ID
+      - GOOGLE_CLIENT_SECRET
+      - GOOGLE_MAPS_API_KEY
+      - MONGODB_HOST=db:27017
+      - TWITTER_API_KEY
+      - TWITTER_API_SECRET
+
+    volumes:
+      - .:/ballers
+    volumes_from:
+      - deps
+    ports:
+      - "$PORT:3000"
+    links:
+      - db
+    network_mode: bridge
+
+  deps:
+    image: busybox
+    volumes:
+      - ./bundle_store:/ballers/bundle_store
+    network_mode: bridge
+
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - /var/lib/mongodb:/data/db
+    network_mode: bridge

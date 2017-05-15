@@ -1,0 +1,50 @@
+AllCops:
+  Exclude:
+    - "bin/**/*"
+    - "bundle_store/**/*"
+    - "config"
+    - "db/migrate/*"
+    - "db/schema.rb"
+    - "node_modules/**/*"
+    - "spec/fixtures/**/*"
+    - "vendor/**/*"
+
+Metrics/LineLength:
+  StyleGuide: "https://github.com/bbatsov/ruby-style-guide#80-character-limits"
+  Max: 80
+
+Metrics/BlockLength:
+  Enabled: false
+  Exclude:
+    - "spec/**/*"
+
+SpaceAroundEqualsInParameterDefault:
+  Enabled: false
+
+Style/Alias:
+  EnforcedStyle: "prefer_alias_method"
+
+Style/AsciiComments:
+  StyleGuide: "https://github.com/bbatsov/ruby-style-guide#english-comments"
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+Style/ParallelAssignment:
+  StyleGuide: "https://github.com/bbatsov/ruby-style-guide#parallel-assignment"
+  Enabled: false
+
+Style/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: space
+
+Style/StringLiterals:
+  StyleGuide: "https://github.com/bbatsov/ruby-style-guide#consistent-string-literals"
+  EnforcedStyle: double_quotes
+
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

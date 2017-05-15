@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+bundle outdated
+bundle check || bundle
+if [ -f tmp/pids/server.pid ]; then
+  rm -f tmp/pids/server.pid
+fi
+bin/rails s
