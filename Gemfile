@@ -11,6 +11,7 @@ gem "active_model_serializers", "~> 0.10.0"
 gem "mongoid", "~> 6"
 gem "mongoid-geospatial", require: "mongoid/geospatial"
 gem "puma", "~> 3.7"
+gem "rack-cors", require: "rack/cors"
 gem "rails", "~> 5.1.0"
 gem "webpush"
 
