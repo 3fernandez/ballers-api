@@ -4,4 +4,4 @@ bundle check || bundle
 if [ -f tmp/pids/server.pid ]; then
   rm -f tmp/pids/server.pid
 fi
-bin/rails s
+bin/rails s -b 0.0.0.0

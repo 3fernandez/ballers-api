@@ -12,7 +12,7 @@ gem "mongoid", "~> 6"
 gem "mongoid-geospatial", require: "mongoid/geospatial"
 gem "puma", "~> 3.7"
 gem "rack-cors", require: "rack/cors"
-gem "rails", "~> 5.1.0"
+gem "rails", "~> 5.1"
 gem "webpush"
 
 # depends of mongoid to be listed before
