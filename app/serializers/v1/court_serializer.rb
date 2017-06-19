@@ -9,5 +9,6 @@ module V1
       created_at
       updated_at
     ]
+    has_many :recurrent_events
   end
 end

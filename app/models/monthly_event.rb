@@ -1,0 +1,2 @@
+class MonthlyEvent < RecurrentEvent
+end

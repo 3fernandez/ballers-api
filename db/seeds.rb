@@ -4,7 +4,21 @@ if Rails.env.development?
       name: "Baskquete ICV",
       address: "Rua Maricá, 320, Praça Seca, Rio de Janeiro," \
       "State of Rio de Janeiro, Brazil",
-      coordinates: { latitude: -22.8903048, longitude: -43.345593399999984 }
+      coordinates: { latitude: -22.8903048, longitude: -43.345593399999984 },
+      recurrent_events: [
+        {
+          _type: "WeeklyEvent",
+          start_time: "19:30 -0300",
+          end_time: "21:30 -0300",
+          recurrence: { on: :tuesday }
+        },
+        {
+          _type: "MonthlyEvent",
+          start_time: "19:30 -0300",
+          end_time: "21:30 -0300",
+          recurrence: { days: { thursday: 3 } }
+        }
+      ]
     },
     {
       name: "Basquete IBB",

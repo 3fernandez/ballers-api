@@ -2,7 +2,7 @@ module V1
   class CourtsController < ApplicationController
     def index
       courts = Court.all.to_a
-      render json: courts
+      render json: courts, include: :recurrent_events
     end
 
     def show

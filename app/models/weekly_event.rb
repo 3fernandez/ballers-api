@@ -1,0 +1,2 @@
+class WeeklyEvent < RecurrentEvent
+end
