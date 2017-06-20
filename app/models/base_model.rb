@@ -1,4 +1,4 @@
-class BaseModel < ActiveModelSerializers::Model
+class BaseModel
   include Mongoid::Document
   include Mongoid::Timestamps
 end

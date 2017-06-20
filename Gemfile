@@ -7,6 +7,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "active_interaction", "~> 3.5"
 gem "active_model_serializers", "~> 0.10.0"
 gem "mongoid", "~> 6"
 gem "mongoid-geospatial", require: "mongoid/geospatial"

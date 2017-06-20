@@ -8,6 +8,7 @@ class Court
   field :coordinates, type: Point, sphere: true
 
   embeds_many :recurrent_events, as: :recurrent
+  has_many :events
 
   attr_reader :map_url
 
@@ -53,28 +54,5 @@ class Court
       "style=feature:road.arterial|element:labels.icon|visibility:off&"\
       "style=feature:transit|element:all|visibility:off&"\
       "style=feature:water|element:all|color:0x46bcec|visibility:on&"\
-  end
-
-  def self.run
-    Court.new(
-      name: "Baskquete ICV",
-      address: "Rua Maricá, 320, Praça Seca, Rio de Janeiro," \
-      "State of Rio de Janeiro, Brazil",
-      coordinates: { latitude: -22.8903048, longitude: -43.345593399999984 },
-      recurrent_events: [
-        {
-          _type: "WeeklyEvent",
-          start_time: "19:30 -0300",
-          end_time: "21:30 -0300",
-          days: :tuesday
-        },
-        {
-          _type: "MonthlyEvent",
-          start_time: "19:30 -0300",
-          end_time: "21:30 -0300",
-          days: { thursday: 3 }
-        }
-      ]
-    )
   end
 end
