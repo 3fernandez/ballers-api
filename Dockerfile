@@ -2,16 +2,24 @@ FROM ruby:2.4.1-alpine
 
 RUN apk update && apk add build-base libxml2-dev libxslt-dev tzdata
 
-ARG PORT
+ARG USERID
+ARG USERNAME
 
-ENV PORT $PORT
-ENV APP_HOME /ballers
-ENV BUNDLE_PATH $APP_HOME/bundle_store
+RUN addgroup -S $USERNAME && adduser -u $USERID -S -g $USERNAME $USERNAME
+USER $USERNAME
 
+ENV APP_HOME /home/$USERNAME/ballers
 RUN mkdir $APP_HOME
 
 WORKDIR $APP_HOME
 
 COPY . $APP_HOME
+
+ARG PORT
+ARG BUNDLE_DIR
+
+ENV PORT $PORT
+ENV PATH="$APP_HOME/bin:${PATH}"
+ENV BUNDLE_PATH $APP_HOME/$BUNDLE_DIR
 
 EXPOSE $PORT
