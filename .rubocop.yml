@@ -18,6 +18,9 @@ Metrics/BlockLength:
   Exclude:
     - "spec/**/*"
 
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
 SpaceAroundEqualsInParameterDefault:
   Enabled: false
 
@@ -31,15 +34,9 @@ Style/AsciiComments:
 Style/Documentation:
   Enabled: false
 
-Style/DotPosition:
-  EnforcedStyle: trailing
-
 Style/ParallelAssignment:
   StyleGuide: "https://github.com/bbatsov/ruby-style-guide#parallel-assignment"
   Enabled: false
-
-Style/SpaceAroundEqualsInParameterDefault:
-  EnforcedStyle: space
 
 Style/StringLiterals:
   StyleGuide: "https://github.com/bbatsov/ruby-style-guide#consistent-string-literals"
