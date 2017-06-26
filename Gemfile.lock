@@ -249,7 +249,6 @@ DEPENDENCIES
   active_interaction (~> 3.5)
   active_model_serializers (~> 0.10.0)
   awesome_print
-  byebug
   database_cleaner
   dotenv-rails
   factory_girl_rails
@@ -261,7 +260,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   mongoid (~> 6)
   mongoid-geospatial
-  montrose
+  montrose (~> 0.4.0)
   overcommit
   pry-byebug
   pry-rails
@@ -275,7 +274,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   timecop
-  tzinfo-data
   webpush
 
 RUBY VERSION

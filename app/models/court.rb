@@ -13,11 +13,11 @@ class Court
   attr_reader :map_url
 
   def latitude
-    coordinates.y
+    coordinates.try(:y)
   end
 
   def longitude
-    coordinates.x
+    coordinates.try(:x)
   end
 
   def self.near_by(coordinates, distance = 5000)

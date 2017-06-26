@@ -12,7 +12,7 @@ module Courts
 
     def create_upcoming_event(recurrent_event)
       event_date = Montrose.recurrence(recurrent_event.recurrence).take(1).first
-      court.events.build(
+      court.events.create(
         status: Event.statuses[:upcoming],
         start_time: event_date,
         end_time: event_date + recurrent_event.duration

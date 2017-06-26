@@ -1,5 +1,8 @@
 module V1
   class CourtSerializer < ActiveModel::Serializer
+    has_many :recurrent_events
+    has_many :events
+
     attributes %i[
       id
       name
@@ -9,6 +12,5 @@ module V1
       created_at
       updated_at
     ]
-    has_many :recurrent_events
   end
 end

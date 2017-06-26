@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Courts::CreateUpcomingEvents, type: :interaction do
-  let(:court) { build(:court) }
+  let(:court) { create(:court) }
   subject { described_class.run!(court: court) }
 
   describe ".run" do
@@ -25,6 +25,7 @@ describe Courts::CreateUpcomingEvents, type: :interaction do
       Timecop.freeze(date) do
         expect(subject).to match_array [
           have_attributes(
+            persisted?: true,
             status_cd: Event.statuses[:upcoming],
             start_time: event_date.change(hour: 19),
             end_time: event_date.change(hour: 22)

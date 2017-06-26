@@ -7,16 +7,20 @@ if Rails.env.development?
       coordinates: { latitude: -22.8903048, longitude: -43.345593399999984 },
       recurrent_events: [
         {
-          _type: "WeeklyEvent",
-          start_time: "19:30 -0300",
-          end_time: "21:30 -0300",
-          recurrence: { on: :tuesday }
+          recurrence: {
+            every: :week,
+            on: :tuesday,
+            at: "06:30 PM -0300"
+          },
+          duration: 2.hours
         },
         {
-          _type: "MonthlyEvent",
-          start_time: "19:30 -0300",
-          end_time: "21:30 -0300",
-          recurrence: { days: { thursday: 3 } }
+          recurrence: {
+            every: :month,
+            day: { thursday: 3 },
+            at: "06:30 PM -0300"
+          },
+          duration: 2.hours
         }
       ]
     },
