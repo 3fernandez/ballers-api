@@ -29,13 +29,65 @@ if Rails.env.development?
       address: "Igreja Batista Betânia Tabernáculo de Adoração," \
       "Estrada Manuel Nogueira de Sá, Realengo, Rio de Janeiro," \
       "State of Rio de Janeiro, Brazil",
-      coordinates: { latitude: -22.8885352, longitude: -43.41397269999999 }
+      coordinates: { latitude: -22.8885352, longitude: -43.41397269999999 },
+      recurrent_events: [
+        {
+          recurrence: {
+            every: :week,
+            on: :saturday,
+            at: "09:30 AM -0300"
+          },
+          duration: 3.hours + 30.minutes
+        },
+        {
+          recurrence: {
+            every: :week,
+            on: :thursday,
+            at: "07:00 PM -0300"
+          },
+          duration: 3.hours
+        }
+      ]
     },
     {
       name: "Baskeire",
       address: "Rua Cairuçu, Vila Valqueire, Rio de Janeiro," \
       "State of Rio de Janeiro, Brazil",
-      coordinates: { latitude: -22.8810174, longitude: -43.37163129999999 }
+      coordinates: { latitude: -22.8810174, longitude: -43.37163129999999 },
+      recurrent_events: [
+        {
+          recurrence: {
+            every: :week,
+            on: :sunday,
+            at: "09:00 AM -0300"
+          },
+          duration: 3.hours
+        },
+        {
+          recurrence: {
+            every: :week,
+            on: :saturday,
+            at: "09:00 AM -0300"
+          },
+          duration: 3.hours
+        },
+        {
+          recurrence: {
+            every: :week,
+            on: :tuesday,
+            at: "06:00 PM -0300"
+          },
+          duration: 4.hours
+        },
+        {
+          recurrence: {
+            every: :week,
+            on: :thursday,
+            at: "06:00 PM -0300"
+          },
+          duration: 4.hours
+        }
+      ]
     },
     {
       name: "Praça Patriarca",

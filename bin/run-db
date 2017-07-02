@@ -1,2 +1,3 @@
 echo "Starting database..."
+docker-compose run --rm --service-ports db
 echo "DONE!"

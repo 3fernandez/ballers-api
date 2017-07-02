@@ -6,6 +6,7 @@ class Event < BaseModel
   as_enum :status, %i[upcoming ongoing ended cancelled]
   field :start_time, type: Time
   field :end_time, type: Time
+  field :cancelation_reason, type: String
 
   default_scope { order(start_time: :asc) }
 end
